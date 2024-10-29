@@ -1,0 +1,96 @@
+.wrapper {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 20px 24px;
+
+  background-color: white;
+
+  transition: all 0.5s;
+  list-style: none;
+  display: flex;
+  align-items: start;
+
+  display: none;
+  @media (min-width: 768px) {
+    position: static;
+    height: unset;
+    display: block;
+  }
+
+  &.open {
+    display: block;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 96px);
+
+  @media (min-width: 768px) {
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    height: unset;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+
+  span {
+    font-weight: 700;
+    color: var(--secondary-color);
+    transition: color 0.2s;
+  }
+
+  .selector {
+    height: 2px;
+    width: 0;
+    background-color: transparent;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    span {
+      color: var(--primary-color);
+    }
+  }
+
+  &.active {
+    span {
+      color: var(--primary-color);
+    }
+    .selector {
+      background-color: black;
+      width: 100%;
+    }
+  }
+}
+
+.location {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
